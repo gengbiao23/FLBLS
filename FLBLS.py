@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def LDMBLS(A, Y, A_test=None, Y_test=None, lambda_para1=1e-3, lambda_para2=1e-3, epochs=500, epsilon=1e-1):
     """
-    Local Discrimination and Manifold Regularization Broad Learning System (LDMBLS)
+    Label dragging BLS (LDMBLS)
 
     Parameters:
     A: Input feature matrix (n_samples x n_features)
@@ -108,6 +108,11 @@ def LDMBLS(A, Y, A_test=None, Y_test=None, lambda_para1=1e-3, lambda_para2=1e-3,
     return W
 
 def REMBLS(A, Y, A_test=None, Y_test=None, lambda_para1=1e-3, lambda_para2=1e-3, epochs=500, epsilon=1e-1):
+
+    """
+    Retargeted manifold BLS
+    """
+
     N,_ = A.shape
     gnd = np.argmax(Y, axis=1)  # Get ground truth labels
 
